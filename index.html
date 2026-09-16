@@ -6,7 +6,7 @@
 
 <title>PICKS</title>
 
-<meta name="description" content="PICKS — Burgers Premium & Chocolat à Casablanca. Découvrez notre menu, nos restaurants et commandez sur Glovo.">
+<meta name="description" content="PICKS — Burgers Premium & Chocolat à Casablanca. Découvrez nos restaurants et commandez sur Glovo.">
 <meta name="theme-color" content="#e51b23">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,15 +15,10 @@
 
 <style>
 
-/* =====================================================
-   BASE
-===================================================== */
-
 :root{
     --red:#e51b23;
     --red-dark:#c9141b;
     --black:#090909;
-    --dark:#151515;
     --white:#fff;
     --gray:#777;
     --light:#f6f6f6;
@@ -270,15 +265,6 @@ header{
     transform:translateY(-2px);
 }
 
-.btn-white{
-    background:#fff;
-    color:#111;
-}
-
-.btn-white:hover{
-    transform:translateY(-2px);
-}
-
 /* =====================================================
    INFO
 ===================================================== */
@@ -338,122 +324,6 @@ section.content{
     font-size:13px;
     max-width:650px;
     margin-top:10px;
-}
-
-/* =====================================================
-   MENU
-===================================================== */
-
-.menu-tools{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin:30px 0 25px;
-}
-
-.search{
-    flex:1;
-    min-width:220px;
-    height:44px;
-    padding:0 14px;
-    border:1px solid var(--border);
-    border-radius:7px;
-    outline:none;
-}
-
-.search:focus{
-    border-color:var(--red);
-}
-
-.filter{
-    height:44px;
-    padding:0 17px;
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:7px;
-    cursor:pointer;
-    font-size:11px;
-    font-weight:800;
-    text-transform:uppercase;
-}
-
-.filter.active,
-.filter:hover{
-    color:#fff;
-    background:var(--red);
-    border-color:var(--red);
-}
-
-.menu-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.product{
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    overflow:hidden;
-    background:#fff;
-    transition:.25s;
-}
-
-.product:hover{
-    transform:translateY(-4px);
-    box-shadow:var(--shadow);
-}
-
-.product img{
-    width:100%;
-    height:205px;
-    object-fit:cover;
-}
-
-.product-body{
-    padding:16px;
-}
-
-.product-top{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    margin-bottom:7px;
-}
-
-.product h3{
-    font-size:15px;
-    font-weight:800;
-}
-
-.price{
-    color:var(--red);
-    font-size:15px;
-    font-weight:900;
-    white-space:nowrap;
-}
-
-.product p{
-    color:var(--gray);
-    font-size:11px;
-    line-height:1.6;
-}
-
-.product a{
-    display:block;
-    text-align:center;
-    margin-top:13px;
-    padding:9px;
-    border:1px solid var(--red);
-    border-radius:6px;
-    color:var(--red);
-    font-size:10px;
-    font-weight:800;
-    text-transform:uppercase;
-}
-
-.product a:hover{
-    background:var(--red);
-    color:#fff;
 }
 
 /* =====================================================
@@ -768,10 +638,6 @@ footer{
         display:block;
     }
 
-    .menu-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
     .cta-inner,
     .location{
         grid-template-columns:1fr;
@@ -834,19 +700,6 @@ footer{
         padding:55px 0;
     }
 
-    .menu-grid{
-        grid-template-columns:1fr;
-    }
-
-    .menu-tools{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-    }
-
-    .search{
-        grid-column:1 / -1;
-    }
-
     .cta-inner{
         padding:55px 0;
     }
@@ -899,10 +752,6 @@ alt="PICKS">
 <ul class="nav-links">
 
 <li>
-<a href="#menu">Menu</a>
-</li>
-
-<li>
 <a href="#restaurants">Restaurants</a>
 </li>
 
@@ -935,8 +784,6 @@ aria-label="Ouvrir le menu">
 </div>
 
 <div class="mobile-menu" id="mobileMenu">
-
-<a href="#menu">Menu</a>
 
 <a href="#restaurants">Restaurants</a>
 
@@ -975,7 +822,7 @@ PLAISIR.
 </h1>
 
 <p>
-THE PICKY EXPRERIENCE
+THE PICKY EXPERIENCE
 </p>
 
 <div class="buttons">
@@ -985,12 +832,6 @@ class="btn btn-red"
 href="https://glovoapp.com/"
 target="_blank">
 Commander sur Glovo
-</a>
-
-<a
-class="btn btn-white"
-href="#menu">
-Découvrir le menu
 </a>
 
 </div>
@@ -1029,423 +870,6 @@ Découvrir le menu
 
 
 <!-- =====================================================
-     MENU
-===================================================== -->
-
-<section class="content" id="menu">
-
-<div class="container">
-
-<div class="section-label">
-Notre carte
-</div>
-
-<h2 class="section-title">
-Le menu PICKS
-</h2>
-
-<p class="section-description">
-Découvrez notre sélection de burgers,
-chicken et créations chocolatées.
-</p>
-
-<div class="menu-tools">
-
-<input
-class="search"
-id="search"
-type="search"
-placeholder="Rechercher un produit...">
-
-<button class="filter active" data-filter="all">
-Tout
-</button>
-
-<button class="filter" data-filter="burger">
-Burgers
-</button>
-
-<button class="filter" data-filter="dessert">
-Desserts
-</button>
-
-</div>
-
-<div class="menu-grid" id="products">
-
-
-<!-- =====================================================
-     PRODUITS
-===================================================== -->
-
-<article
-class="product"
-data-category="burger"
-data-name="Menu Picks Brgr">
-
-<img
-src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=85"
-alt="Menu Picks Brgr"
-loading="lazy">
-
-<div class="product-body">
-
-<div class="product-top">
-<h3>CHesse</h3>
-<span class="price">85 DH</span>
-</div>
-
-<p>
-Bun brioché, double bœuf, cheddar,
-bacon halal, cornichons, oignons caramélisés,
-œuf au plat et sauce PICKS.
-</p>
-
-<a href="https://glovoapp.com/" target="_blank">
-Commander
-</a>
-
-</div>
-</article>
-
-
-<article
-class="product"
-data-category="burger"
-data-name="Menu Buffalo Chickn">
-
-<img
-src="https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=700&q=85"
-alt="Menu Buffalo Chickn"
-loading="lazy">
-
-<div class="product-body">
-
-<div class="product-top">
-<h3>Menu Buffalo Chickn</h3>
-<span class="price">79 DH</span>
-</div>
-
-<p>
-Poulet croustillant, cheddar,
-cornichons, coleslaw et sauces Buffalo & Ranch.
-</p>
-
-<a href="https://glovoapp.com/" target="_blank">
-Commander
-</a>
-
-</div>
-</article>
-
-
-<article
-class="product"
-data-category="burger"
-data-name="Menu Texas BBQ">
-
-<img
-src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=700&q=85"
-alt="Menu Texas BBQ"
-loading="lazy">
-
-<div class="product-body">
-
-<div class="product-top">
-<h3>Menu Texas BBQ</h3>
-<span class="price">75 DH</span>
-</div>
-
-<p>
-Bœuf, emmental, bacon halal,
-onion rings et sauces BBQ & Ranch.
-</p>
-
-<a href="https://glovoapp.com/" target="_blank">
-Commander
-</a>
-
-</div>
-</article>
-
-
-<article
-class="product"
-data-category="burger"
-data-name="Menu Swiss Mushroom">
-
-<img
-src="https://images.unsplash.com/photo-1572802419224-296b0aeee9d?auto=format&fit=crop&w=700&q=85"
-alt="Menu Swiss Mushroom"
-loading="lazy">
-
-<div class="product-body">
-
-<div class="product-top">
-<h3>Menu Swiss Mushroom</h3>
-<span class="price">75 DH</span>
-</div>
-
-<p>
-Bœuf, fromage suisse, champignons,
-roquette, oignons caramélisés et sauce truffe.
-</p>
-
-<a href="https://glovoapp.com/" target="_blank">
-Commander
-</a>
-
-</div>
-</article>
-
-
-<article
-class="product"
-data-category="burger"
-data-name="Menu Boston Spicy">
-
-<img
-src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=85"
-alt="Menu Boston Spicy"
-loading="lazy">
-
-<div class="product-body">
-
-<div class="product-top">
-<h3>Menu Boston Spicy</h3>
-<span class="price">75 DH</span>
-</div>
-
-<p>
-Bœuf, cheddar, jalapeños,
-onion rings, cornichons et sauce spicy.
-</p>
-
-<a href="https://glovoapp.com/" target="_blank">
-Commander
-</a>
-
-</div>
-</article>
-
-
-<article
-class="product"
-data-category="burger"
-data-name="Menu Cheese Brgr">
-
-<img
-src="https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=700&q=85"
-alt="Menu Cheese Brgr"
-loading="lazy">
-
-<div class="product-body">
-
-<div class="product-top">
-<h3>Menu Cheese Brgr</h3>
-<span class="price">65 DH</span>
-</div>
-
-<p>
-Bœuf, cheddar, cornichons,
-laitue, tomate et sauce PICKS.
-</p>
-
-<a href="https://glovoapp.com/" target="_blank">
-Commander
-</a>
-
-</div>
-</article>
-
-
-<article
-class="product"
-data-category="dessert"
-data-name="Pistache Kunafa">
-
-<img
-src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=85"
-alt="Pistache Kunafa"
-loading="lazy">
-
-<div class="product-body">
-
-<div class="product-top">
-<h3>Pistache Kunafa</h3>
-<span class="price">80 DH</span>
-</div>
-
-<p>
-Chocolat au lait belge,
-crème de pistache et kunafa croustillante.
-</p>
-
-<a href="https://glovoapp.com/" target="_blank">
-Commander
-</a>
-
-</div>
-</article>
-
-
-<article
-class="product"
-data-category="dessert"
-data-name="Kunafa Speculoos">
-
-<img
-src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=85"
-alt="Kunafa Speculoos"
-loading="lazy">
-
-<div class="product-body">
-
-<div class="product-top">
-<h3>Kunafa Speculoos</h3>
-<span class="price">75 DH</span>
-</div>
-
-<p>
-Chocolat au lait belge,
-crème de spéculoos et kunafa croustillante.
-</p>
-
-<a href="https://glovoapp.com/" target="_blank">
-Commander
-</a>
-
-</div>
-</article>
-
-
-<article
-class="product"
-data-category="dessert"
-data-name="Croissant Pistache Kunafa">
-
-<img
-src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=700&q=85"
-alt="Croissant Pistache Kunafa"
-loading="lazy">
-
-<div class="product-body">
-
-<div class="product-top">
-<h3>Croissant Pistache Kunafa</h3>
-<span class="price">35 DH</span>
-</div>
-
-<p>
-Croissant pur beurre feuilleté,
-fourré à la crème pistache kunafa.
-</p>
-
-<a href="https://glovoapp.com/" target="_blank">
-Commander
-</a>
-
-</div>
-</article>
-
-
-<article
-class="product"
-data-category="dessert"
-data-name="New York Cookie">
-
-<img
-src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=700&q=85"
-alt="New York Cookie"
-loading="lazy">
-
-<div class="product-body">
-
-<div class="product-top">
-<h3>New York Cookie</h3>
-<span class="price">27 DH</span>
-</div>
-
-<p>
-Cookie géant croustillant à l'extérieur
-avec un cœur fondant au chocolat.
-</p>
-
-<a href="https://glovoapp.com/" target="_blank">
-Commander
-</a>
-
-</div>
-</article>
-
-
-<article
-class="product"
-data-category="dessert"
-data-name="Crookies Pistache">
-
-<img
-src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=700&q=85"
-alt="Crookies Pistache"
-loading="lazy">
-
-<div class="product-body">
-
-<div class="product-top">
-<h3>Crookies Pistache</h3>
-<span class="price">35 DH</span>
-</div>
-
-<p>
-Hybride gourmand entre croissant
-feuilleté et pâte à cookie.
-</p>
-
-<a href="https://glovoapp.com/" target="_blank">
-Commander
-</a>
-
-</div>
-</article>
-
-
-<article
-class="product"
-data-category="dessert"
-data-name="Pancakes Signature">
-
-<img
-src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=700&q=85"
-alt="Pancakes Signature"
-loading="lazy">
-
-<div class="product-body">
-
-<div class="product-top">
-<h3>Pancakes Signature</h3>
-<span class="price">50 DH</span>
-</div>
-
-<p>
-Pancakes moelleux nappés
-de chocolat belge fondu.
-</p>
-
-<a href="https://glovoapp.com/" target="_blank">
-Commander
-</a>
-
-</div>
-</article>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
      CTA
 ===================================================== -->
 
@@ -1464,7 +888,7 @@ Le plaisir ne s'arrête pas au <span>burger.</span>
 </h2>
 
 <p>
-Découvrez également notre univers chocolaté
+Découvrez notre univers chocolaté
 et nos créations gourmandes.
 </p>
 
@@ -1974,7 +1398,6 @@ L'univers gourmand de PICKS.
 
 <h4>Navigation</h4>
 
-<a href="#menu">Menu</a>
 <a href="#restaurants">Restaurants</a>
 <a href="#reclamation">Réclamation</a>
 <a href="#recrutement">Recrutement</a>
@@ -2033,8 +1456,6 @@ toggle.addEventListener("click", () => {
 });
 
 
-/* Fermer le menu après avoir cliqué */
-
 document.querySelectorAll(".mobile-menu a")
 .forEach(link => {
 
@@ -2050,78 +1471,6 @@ document.querySelectorAll(".mobile-menu a")
 
 
 /* =====================================================
-   RECHERCHE + FILTRES
-===================================================== */
-
-const products =
-document.querySelectorAll(".product");
-
-const filters =
-document.querySelectorAll(".filter");
-
-const search =
-document.getElementById("search");
-
-let currentFilter = "all";
-
-
-function updateProducts(){
-
-    const text =
-        search.value.toLowerCase().trim();
-
-    products.forEach(product => {
-
-        const category =
-            product.dataset.category;
-
-        const name =
-            product.dataset.name.toLowerCase();
-
-        const categoryOK =
-            currentFilter === "all" ||
-            category === currentFilter;
-
-        const searchOK =
-            name.includes(text);
-
-        product.style.display =
-            categoryOK && searchOK
-            ? ""
-            : "none";
-
-    });
-
-}
-
-
-filters.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        filters.forEach(item =>
-            item.classList.remove("active")
-        );
-
-        button.classList.add("active");
-
-        currentFilter =
-            button.dataset.filter;
-
-        updateProducts();
-
-    });
-
-});
-
-
-search.addEventListener(
-    "input",
-    updateProducts
-);
-
-
-/* =====================================================
    RÉCLAMATION → APPLICATION MAIL
 ===================================================== */
 
@@ -2133,29 +1482,23 @@ document
 
     const form = new FormData(this);
 
-    const nom =
-        form.get("Nom");
+    const nom = form.get("Nom");
 
-    const telephone =
-        form.get("Téléphone");
+    const telephone = form.get("Téléphone");
 
     const commande =
         form.get("Commande") ||
         "Non renseigné";
 
-    const email =
-        form.get("Email");
+    const email = form.get("Email");
 
-    const message =
-        form.get("Message");
-
+    const message = form.get("Message");
 
     const destinataire =
         "picks@picks.ma";
 
     const objet =
         "Nouvelle réclamation — Site PICKS";
-
 
     const corps =
 `Bonjour,
@@ -2173,7 +1516,6 @@ ${message}
 Cordialement,
 ${nom}`;
 
-
     const mailto =
         "mailto:" +
         destinataire +
@@ -2181,7 +1523,6 @@ ${nom}`;
         encodeURIComponent(objet) +
         "&body=" +
         encodeURIComponent(corps);
-
 
     window.location.href = mailto;
 
@@ -2200,11 +1541,9 @@ document
 
     const form = new FormData(this);
 
-    const nom =
-        form.get("Nom");
+    const nom = form.get("Nom");
 
-    const email =
-        form.get("Email");
+    const email = form.get("Email");
 
     const telephone =
         form.get("Téléphone");
@@ -2215,13 +1554,11 @@ document
     const presentation =
         form.get("Présentation");
 
-
     const destinataire =
         "picks@picks.ma";
 
     const objet =
         "Nouvelle candidature — Site PICKS";
-
 
     const corps =
 `Bonjour,
@@ -2239,7 +1576,6 @@ ${presentation}
 Cordialement,
 ${nom}`;
 
-
     const mailto =
         "mailto:" +
         destinataire +
@@ -2247,7 +1583,6 @@ ${nom}`;
         encodeURIComponent(objet) +
         "&body=" +
         encodeURIComponent(corps);
-
 
     window.location.href = mailto;
 
