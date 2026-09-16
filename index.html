@@ -1,0 +1,2289 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PICKS</title>
+
+<meta name="description" content="PICKS — Burgers Premium & Chocolat à Casablanca. Découvrez notre menu, nos restaurants et commandez sur Glovo.">
+<meta name="theme-color" content="#e51b23">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   BASE
+===================================================== */
+
+:root{
+    --red:#e51b23;
+    --red-dark:#c9141b;
+    --black:#090909;
+    --dark:#151515;
+    --white:#fff;
+    --gray:#777;
+    --light:#f6f6f6;
+    --border:#e5e5e5;
+    --radius:12px;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Poppins,sans-serif;
+    color:#111;
+    background:#fff;
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+button,
+input,
+textarea,
+select{
+    font:inherit;
+}
+
+.container{
+    width:min(1200px,calc(100% - 32px));
+    margin:auto;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.97);
+    border-bottom:1px solid var(--border);
+    backdrop-filter:blur(15px);
+}
+
+.nav{
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:21px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.logo img{
+    width:45px;
+    height:45px;
+    border-radius:10px;
+    object-fit:cover;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    list-style:none;
+}
+
+.nav-links a{
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:var(--red);
+}
+
+.order-btn{
+    background:var(--red);
+    color:#fff;
+    padding:11px 17px;
+    border-radius:7px;
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+}
+
+.order-btn:hover{
+    background:var(--red-dark);
+}
+
+/* =====================================================
+   MOBILE BUTTON
+===================================================== */
+
+.menu-toggle{
+    display:none;
+    width:43px;
+    height:43px;
+    border:1px solid var(--border);
+    background:#fff;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:22px;
+}
+
+/* =====================================================
+   MOBILE NAV
+===================================================== */
+
+.mobile-menu{
+    display:none;
+    background:#fff;
+    border-top:1px solid var(--border);
+    padding:10px 16px 18px;
+}
+
+.mobile-menu.open{
+    display:block;
+}
+
+.mobile-menu a{
+    display:block;
+    padding:13px 5px;
+    border-bottom:1px solid #eee;
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+}
+
+.mobile-menu .mobile-order{
+    margin-top:12px;
+    text-align:center;
+    background:var(--red);
+    color:#fff;
+    border-radius:7px;
+    border:0;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:620px;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+    background:
+        linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),
+        url("https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+}
+
+.hero-content{
+    width:min(850px,100%);
+    margin:auto;
+    padding:80px 0;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 13px;
+    background:var(--red);
+    border-radius:30px;
+    font-size:10px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:clamp(40px,7vw,72px);
+    line-height:1;
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+.hero h1 span{
+    color:var(--red);
+}
+
+.hero p{
+    max-width:650px;
+    margin:20px auto 28px;
+    color:#ddd;
+    font-size:15px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    padding:0 23px;
+    border-radius:7px;
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    transition:.2s;
+}
+
+.btn-red{
+    background:var(--red);
+    color:#fff;
+}
+
+.btn-red:hover{
+    background:var(--red-dark);
+    transform:translateY(-2px);
+}
+
+.btn-white{
+    background:#fff;
+    color:#111;
+}
+
+.btn-white:hover{
+    transform:translateY(-2px);
+}
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.info{
+    background:var(--black);
+    color:#fff;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    text-align:center;
+}
+
+.info-item{
+    padding:19px 10px;
+}
+
+.info-item strong{
+    display:block;
+    font-size:12px;
+    text-transform:uppercase;
+}
+
+.info-item span{
+    color:#999;
+    font-size:11px;
+}
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+section.content{
+    padding:75px 0;
+}
+
+.section-label{
+    color:var(--red);
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+}
+
+.section-title{
+    font-size:clamp(28px,4vw,42px);
+    line-height:1.15;
+    font-weight:900;
+    text-transform:uppercase;
+    margin-top:5px;
+}
+
+.section-description{
+    color:var(--gray);
+    font-size:13px;
+    max-width:650px;
+    margin-top:10px;
+}
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.menu-tools{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin:30px 0 25px;
+}
+
+.search{
+    flex:1;
+    min-width:220px;
+    height:44px;
+    padding:0 14px;
+    border:1px solid var(--border);
+    border-radius:7px;
+    outline:none;
+}
+
+.search:focus{
+    border-color:var(--red);
+}
+
+.filter{
+    height:44px;
+    padding:0 17px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:7px;
+    cursor:pointer;
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+}
+
+.filter.active,
+.filter:hover{
+    color:#fff;
+    background:var(--red);
+    border-color:var(--red);
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.product{
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:#fff;
+    transition:.25s;
+}
+
+.product:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow);
+}
+
+.product img{
+    width:100%;
+    height:205px;
+    object-fit:cover;
+}
+
+.product-body{
+    padding:16px;
+}
+
+.product-top{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:7px;
+}
+
+.product h3{
+    font-size:15px;
+    font-weight:800;
+}
+
+.price{
+    color:var(--red);
+    font-size:15px;
+    font-weight:900;
+    white-space:nowrap;
+}
+
+.product p{
+    color:var(--gray);
+    font-size:11px;
+    line-height:1.6;
+}
+
+.product a{
+    display:block;
+    text-align:center;
+    margin-top:13px;
+    padding:9px;
+    border:1px solid var(--red);
+    border-radius:6px;
+    color:var(--red);
+    font-size:10px;
+    font-weight:800;
+    text-transform:uppercase;
+}
+
+.product a:hover{
+    background:var(--red);
+    color:#fff;
+}
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta{
+    background:var(--black);
+    color:#fff;
+}
+
+.cta-inner{
+    padding:70px 0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.cta h2{
+    font-size:clamp(28px,4vw,46px);
+    line-height:1.1;
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+.cta h2 span{
+    color:var(--red);
+}
+
+.cta p{
+    color:#999;
+    font-size:13px;
+    margin:15px 0 25px;
+}
+
+.cta img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:14px;
+}
+
+/* =====================================================
+   RESTAURANTS
+===================================================== */
+
+.location{
+    margin-top:30px;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.location-info{
+    padding:32px;
+}
+
+.location-info h3{
+    font-size:24px;
+    font-weight:900;
+    text-transform:uppercase;
+    margin-bottom:22px;
+}
+
+.contact-line{
+    display:flex;
+    gap:12px;
+    margin-bottom:18px;
+}
+
+.icon{
+    width:34px;
+    height:34px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff0f0;
+    color:var(--red);
+    border-radius:7px;
+    font-weight:900;
+}
+
+.contact-line strong{
+    display:block;
+    font-size:10px;
+    text-transform:uppercase;
+}
+
+.contact-line span{
+    color:var(--gray);
+    font-size:12px;
+}
+
+.map{
+    min-height:380px;
+}
+
+.map iframe{
+    width:100%;
+    height:100%;
+    min-height:380px;
+    border:0;
+}
+
+/* =====================================================
+   SERVICE / RECRUTEMENT
+===================================================== */
+
+.service-area{
+    background:var(--light);
+}
+
+.form-container{
+    max-width:800px;
+}
+
+.form-card{
+    margin-top:30px;
+    background:#fff;
+    padding:28px;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+}
+
+.form-card h3{
+    font-size:22px;
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+.form-card > p{
+    color:var(--gray);
+    font-size:12px;
+    margin:7px 0 25px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.field{
+    margin-bottom:15px;
+}
+
+.field label{
+    display:block;
+    font-size:10px;
+    font-weight:800;
+    text-transform:uppercase;
+    margin-bottom:6px;
+}
+
+.field input,
+.field textarea,
+.field select{
+    width:100%;
+    padding:12px;
+    border:1px solid var(--border);
+    background:#fafafa;
+    border-radius:6px;
+    outline:none;
+    font-size:12px;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus{
+    border-color:var(--red);
+    background:#fff;
+}
+
+.field textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.submit{
+    width:100%;
+    border:0;
+    padding:13px;
+    background:var(--red);
+    color:#fff;
+    border-radius:7px;
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.submit:hover{
+    background:var(--red-dark);
+}
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.faq{
+    max-width:800px;
+    margin-top:25px;
+}
+
+.faq-item{
+    border-bottom:1px solid var(--border);
+}
+
+.faq-button{
+    width:100%;
+    padding:18px 0;
+    background:none;
+    border:0;
+    display:flex;
+    justify-content:space-between;
+    text-align:left;
+    font-size:13px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.faq-button span{
+    color:var(--red);
+    font-size:18px;
+}
+
+.answer{
+    display:none;
+    color:var(--gray);
+    font-size:12px;
+    padding-bottom:18px;
+}
+
+.answer.open{
+    display:block;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:var(--black);
+    color:#fff;
+}
+
+.footer{
+    padding:50px 0 25px;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer h3{
+    font-size:24px;
+    font-weight:900;
+}
+
+.footer p,
+.footer a{
+    color:#888;
+    font-size:11px;
+}
+
+.footer p{
+    max-width:350px;
+    margin-top:10px;
+}
+
+.footer h4{
+    font-size:11px;
+    text-transform:uppercase;
+    margin-bottom:13px;
+}
+
+.footer a{
+    display:block;
+    margin-bottom:8px;
+}
+
+.footer a:hover{
+    color:#fff;
+}
+
+.footer-bottom{
+    border-top:1px solid #222;
+    text-align:center;
+    padding:18px;
+    color:#666;
+    font-size:10px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px){
+
+    .nav-links,
+    .desktop-order{
+        display:none;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .menu-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .cta-inner,
+    .location{
+        grid-template-columns:1fr;
+    }
+
+    .map{
+        min-height:300px;
+    }
+
+    .map iframe{
+        min-height:300px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .container{
+        width:min(100% - 24px,1200px);
+    }
+
+    .nav{
+        height:65px;
+    }
+
+    .logo img{
+        width:40px;
+        height:40px;
+    }
+
+    .hero{
+        min-height:560px;
+    }
+
+    .hero-content{
+        padding:70px 0;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:12px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    section.content{
+        padding:55px 0;
+    }
+
+    .menu-grid{
+        grid-template-columns:1fr;
+    }
+
+    .menu-tools{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+    .search{
+        grid-column:1 / -1;
+    }
+
+    .cta-inner{
+        padding:55px 0;
+    }
+
+    .cta img{
+        height:250px;
+    }
+
+    .location-info{
+        padding:24px;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .footer{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="container nav">
+
+<a href="#" class="logo">
+
+<img
+src="https://graph.facebook.com/100083121998073/picture?type=large"
+alt="PICKS">
+
+<span>PICKS</span>
+
+</a>
+
+<nav>
+
+<ul class="nav-links">
+
+<li>
+<a href="#menu">Menu</a>
+</li>
+
+<li>
+<a href="#restaurants">Restaurants</a>
+</li>
+
+<li>
+<a href="#reclamation">Réclamation</a>
+</li>
+
+<li>
+<a href="#recrutement">Recrutement</a>
+</li>
+
+</ul>
+
+</nav>
+
+<a
+class="order-btn desktop-order"
+href="https://glovoapp.com/"
+target="_blank">
+Commander
+</a>
+
+<button
+class="menu-toggle"
+id="menuToggle"
+aria-label="Ouvrir le menu">
+☰
+</button>
+
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+
+<a href="#menu">Menu</a>
+
+<a href="#restaurants">Restaurants</a>
+
+<a href="#reclamation">Réclamation</a>
+
+<a href="#recrutement">Recrutement</a>
+
+<a
+class="mobile-order"
+href="https://glovoapp.com/"
+target="_blank">
+Commander sur Glovo
+</a>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<div class="badge">
+PICKS Casablanca
+</div>
+
+<h1>
+BURGERS.<br>
+<span>CHOCOLAT.</span><br>
+PLAISIR.
+</h1>
+
+<p>
+L'univers PICKS réunit burgers premium,
+chicken gourmand et créations chocolatées.
+</p>
+
+<div class="buttons">
+
+<a
+class="btn btn-red"
+href="https://glovoapp.com/"
+target="_blank">
+Commander sur Glovo
+</a>
+
+<a
+class="btn btn-white"
+href="#menu">
+Découvrir le menu
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     INFO
+===================================================== -->
+
+<div class="info">
+
+<div class="container info-grid">
+
+<div class="info-item">
+<strong>🍔 Burgers Premium</strong>
+<span>Des recettes généreuses</span>
+</div>
+
+<div class="info-item">
+<strong>🍫 Chocolat</strong>
+<span>Créations gourmandes</span>
+</div>
+
+<div class="info-item">
+<strong>🛵 Livraison</strong>
+<span>Commande en ligne</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<section class="content" id="menu">
+
+<div class="container">
+
+<div class="section-label">
+Notre carte
+</div>
+
+<h2 class="section-title">
+Le menu PICKS
+</h2>
+
+<p class="section-description">
+Découvrez notre sélection de burgers,
+chicken et créations chocolatées.
+</p>
+
+<div class="menu-tools">
+
+<input
+class="search"
+id="search"
+type="search"
+placeholder="Rechercher un produit...">
+
+<button class="filter active" data-filter="all">
+Tout
+</button>
+
+<button class="filter" data-filter="burger">
+Burgers
+</button>
+
+<button class="filter" data-filter="dessert">
+Desserts
+</button>
+
+</div>
+
+<div class="menu-grid" id="products">
+
+
+<!-- =====================================================
+     PRODUITS
+===================================================== -->
+
+<article
+class="product"
+data-category="burger"
+data-name="Menu Picks Brgr">
+
+<img
+src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=85"
+alt="Menu Picks Brgr"
+loading="lazy">
+
+<div class="product-body">
+
+<div class="product-top">
+<h3>Menu Picks Brgr</h3>
+<span class="price">85 DH</span>
+</div>
+
+<p>
+Bun brioché, double bœuf, cheddar,
+bacon halal, cornichons, oignons caramélisés,
+œuf au plat et sauce PICKS.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank">
+Commander
+</a>
+
+</div>
+</article>
+
+
+<article
+class="product"
+data-category="burger"
+data-name="Menu Buffalo Chickn">
+
+<img
+src="https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=700&q=85"
+alt="Menu Buffalo Chickn"
+loading="lazy">
+
+<div class="product-body">
+
+<div class="product-top">
+<h3>Menu Buffalo Chickn</h3>
+<span class="price">79 DH</span>
+</div>
+
+<p>
+Poulet croustillant, cheddar,
+cornichons, coleslaw et sauces Buffalo & Ranch.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank">
+Commander
+</a>
+
+</div>
+</article>
+
+
+<article
+class="product"
+data-category="burger"
+data-name="Menu Texas BBQ">
+
+<img
+src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=700&q=85"
+alt="Menu Texas BBQ"
+loading="lazy">
+
+<div class="product-body">
+
+<div class="product-top">
+<h3>Menu Texas BBQ</h3>
+<span class="price">75 DH</span>
+</div>
+
+<p>
+Bœuf, emmental, bacon halal,
+onion rings et sauces BBQ & Ranch.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank">
+Commander
+</a>
+
+</div>
+</article>
+
+
+<article
+class="product"
+data-category="burger"
+data-name="Menu Swiss Mushroom">
+
+<img
+src="https://images.unsplash.com/photo-1572802419224-296b0aeee9d?auto=format&fit=crop&w=700&q=85"
+alt="Menu Swiss Mushroom"
+loading="lazy">
+
+<div class="product-body">
+
+<div class="product-top">
+<h3>Menu Swiss Mushroom</h3>
+<span class="price">75 DH</span>
+</div>
+
+<p>
+Bœuf, fromage suisse, champignons,
+roquette, oignons caramélisés et sauce truffe.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank">
+Commander
+</a>
+
+</div>
+</article>
+
+
+<article
+class="product"
+data-category="burger"
+data-name="Menu Boston Spicy">
+
+<img
+src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=85"
+alt="Menu Boston Spicy"
+loading="lazy">
+
+<div class="product-body">
+
+<div class="product-top">
+<h3>Menu Boston Spicy</h3>
+<span class="price">75 DH</span>
+</div>
+
+<p>
+Bœuf, cheddar, jalapeños,
+onion rings, cornichons et sauce spicy.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank">
+Commander
+</a>
+
+</div>
+</article>
+
+
+<article
+class="product"
+data-category="burger"
+data-name="Menu Cheese Brgr">
+
+<img
+src="https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=700&q=85"
+alt="Menu Cheese Brgr"
+loading="lazy">
+
+<div class="product-body">
+
+<div class="product-top">
+<h3>Menu Cheese Brgr</h3>
+<span class="price">65 DH</span>
+</div>
+
+<p>
+Bœuf, cheddar, cornichons,
+laitue, tomate et sauce PICKS.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank">
+Commander
+</a>
+
+</div>
+</article>
+
+
+<article
+class="product"
+data-category="dessert"
+data-name="Pistache Kunafa">
+
+<img
+src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=85"
+alt="Pistache Kunafa"
+loading="lazy">
+
+<div class="product-body">
+
+<div class="product-top">
+<h3>Pistache Kunafa</h3>
+<span class="price">80 DH</span>
+</div>
+
+<p>
+Chocolat au lait belge,
+crème de pistache et kunafa croustillante.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank">
+Commander
+</a>
+
+</div>
+</article>
+
+
+<article
+class="product"
+data-category="dessert"
+data-name="Kunafa Speculoos">
+
+<img
+src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=85"
+alt="Kunafa Speculoos"
+loading="lazy">
+
+<div class="product-body">
+
+<div class="product-top">
+<h3>Kunafa Speculoos</h3>
+<span class="price">75 DH</span>
+</div>
+
+<p>
+Chocolat au lait belge,
+crème de spéculoos et kunafa croustillante.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank">
+Commander
+</a>
+
+</div>
+</article>
+
+
+<article
+class="product"
+data-category="dessert"
+data-name="Croissant Pistache Kunafa">
+
+<img
+src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=700&q=85"
+alt="Croissant Pistache Kunafa"
+loading="lazy">
+
+<div class="product-body">
+
+<div class="product-top">
+<h3>Croissant Pistache Kunafa</h3>
+<span class="price">35 DH</span>
+</div>
+
+<p>
+Croissant pur beurre feuilleté,
+fourré à la crème pistache kunafa.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank">
+Commander
+</a>
+
+</div>
+</article>
+
+
+<article
+class="product"
+data-category="dessert"
+data-name="New York Cookie">
+
+<img
+src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=700&q=85"
+alt="New York Cookie"
+loading="lazy">
+
+<div class="product-body">
+
+<div class="product-top">
+<h3>New York Cookie</h3>
+<span class="price">27 DH</span>
+</div>
+
+<p>
+Cookie géant croustillant à l'extérieur
+avec un cœur fondant au chocolat.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank">
+Commander
+</a>
+
+</div>
+</article>
+
+
+<article
+class="product"
+data-category="dessert"
+data-name="Crookies Pistache">
+
+<img
+src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=700&q=85"
+alt="Crookies Pistache"
+loading="lazy">
+
+<div class="product-body">
+
+<div class="product-top">
+<h3>Crookies Pistache</h3>
+<span class="price">35 DH</span>
+</div>
+
+<p>
+Hybride gourmand entre croissant
+feuilleté et pâte à cookie.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank">
+Commander
+</a>
+
+</div>
+</article>
+
+
+<article
+class="product"
+data-category="dessert"
+data-name="Pancakes Signature">
+
+<img
+src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=700&q=85"
+alt="Pancakes Signature"
+loading="lazy">
+
+<div class="product-body">
+
+<div class="product-top">
+<h3>Pancakes Signature</h3>
+<span class="price">50 DH</span>
+</div>
+
+<p>
+Pancakes moelleux nappés
+de chocolat belge fondu.
+</p>
+
+<a href="https://glovoapp.com/" target="_blank">
+Commander
+</a>
+
+</div>
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+<div class="container cta-inner">
+
+<div>
+
+<div class="section-label">
+PICKS EXPERIENCE
+</div>
+
+<h2>
+Le plaisir ne s'arrête pas au <span>burger.</span>
+</h2>
+
+<p>
+Découvrez également notre univers chocolaté
+et nos créations gourmandes.
+</p>
+
+<a
+class="btn btn-red"
+href="https://glovoapp.com/"
+target="_blank">
+Commander
+</a>
+
+</div>
+
+<img
+src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=85"
+alt="Dessert PICKS"
+loading="lazy">
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     RESTAURANTS
+===================================================== -->
+
+<section class="content" id="restaurants">
+
+<div class="container">
+
+<div class="section-label">
+Nous trouver
+</div>
+
+<h2 class="section-title">
+Nos restaurants
+</h2>
+
+<p class="section-description">
+Retrouvez votre restaurant PICKS à Casablanca.
+</p>
+
+<div class="location">
+
+<div class="location-info">
+
+<h3>
+PICKS Casablanca
+</h3>
+
+<div class="contact-line">
+
+<div class="icon">⌖</div>
+
+<div>
+<strong>Adresse</strong>
+<span>109 Rue Omar Al Khayam, Casablanca</span>
+</div>
+
+</div>
+
+
+<div class="contact-line">
+
+<div class="icon">☎</div>
+
+<div>
+<strong>Téléphone</strong>
+<span>+212 520-782705</span>
+</div>
+
+</div>
+
+
+<div class="contact-line">
+
+<div class="icon">◷</div>
+
+<div>
+<strong>Horaires</strong>
+<span>09:00 – 01:00</span>
+</div>
+
+</div>
+
+
+<div class="buttons" style="justify-content:flex-start">
+
+<a
+class="btn btn-red"
+href="https://www.google.com/maps/search/?api=1&query=PICKS+109+Rue+Omar+Al+Khayam+Casablanca"
+target="_blank">
+Itinéraire
+</a>
+
+<a
+class="btn"
+style="background:#111;color:#fff"
+href="tel:+212520782705">
+Appeler
+</a>
+
+</div>
+
+</div>
+
+
+<div class="map">
+
+<iframe
+src="https://maps.google.com/maps?q=PICKS+109+Rue+Omar+Al+Khayam+Casablanca&t=&z=16&ie=UTF8&iwloc=&output=embed"
+loading="lazy"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     RÉCLAMATION
+===================================================== -->
+
+<section class="content service-area" id="reclamation">
+
+<div class="container form-container">
+
+<div class="section-label">
+Service client
+</div>
+
+<h2 class="section-title">
+Réclamation
+</h2>
+
+<p class="section-description">
+Un problème avec votre commande ? Envoyez votre demande
+directement à l'équipe PICKS.
+</p>
+
+
+<div class="form-card">
+
+<h3>
+Nous contacter
+</h3>
+
+<p>
+Remplissez le formulaire puis votre application Mail
+s'ouvrira avec le message automatiquement préparé.
+</p>
+
+
+<form id="reclamationForm">
+
+<div class="form-row">
+
+<div class="field">
+
+<label>
+Nom complet
+</label>
+
+<input
+type="text"
+name="Nom"
+autocomplete="name"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Téléphone
+</label>
+
+<input
+type="tel"
+name="Téléphone"
+placeholder="06XXXXXXXX"
+autocomplete="tel"
+required>
+
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Numéro de commande
+</label>
+
+<input
+type="text"
+name="Commande"
+placeholder="#12345">
+
+</div>
+
+
+<div class="field">
+
+<label>
+Email
+</label>
+
+<input
+type="email"
+name="Email"
+autocomplete="email"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Réclamation
+</label>
+
+<textarea
+name="Message"
+placeholder="Décrivez votre problème..."
+required></textarea>
+
+</div>
+
+
+<button class="submit" type="submit">
+Envoyer ma réclamation
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     RECRUTEMENT
+===================================================== -->
+
+<section class="content" id="recrutement">
+
+<div class="container form-container">
+
+<div class="section-label">
+PICKS Careers
+</div>
+
+<h2 class="section-title">
+Recrutement
+</h2>
+
+<p class="section-description">
+Vous souhaitez rejoindre l'équipe PICKS ?
+Envoyez votre candidature.
+</p>
+
+
+<div class="form-card">
+
+<h3>
+Rejoindre PICKS
+</h3>
+
+<p>
+Remplissez le formulaire puis votre application Mail
+s'ouvrira avec votre candidature automatiquement préparée.
+</p>
+
+
+<form id="recrutementForm">
+
+<div class="form-row">
+
+<div class="field">
+
+<label>
+Nom & prénom
+</label>
+
+<input
+type="text"
+name="Nom"
+autocomplete="name"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Email
+</label>
+
+<input
+type="email"
+name="Email"
+autocomplete="email"
+required>
+
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Téléphone
+</label>
+
+<input
+type="tel"
+name="Téléphone"
+autocomplete="tel"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Poste recherché
+</label>
+
+<select name="Poste" required>
+
+<option value="">
+Sélectionnez un poste
+</option>
+
+<option>
+Pâtissier / Chocolatier
+</option>
+
+<option>
+Cuisinier Fast-Food
+</option>
+
+<option>
+Équipier polyvalent
+</option>
+
+<option>
+Manager
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Présentation
+</label>
+
+<textarea
+name="Présentation"
+placeholder="Présentez votre parcours, vos expériences et vos compétences..."
+required></textarea>
+
+</div>
+
+
+<button class="submit" type="submit">
+Envoyer ma candidature
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section class="content">
+
+<div class="container">
+
+<div class="section-label">
+Questions fréquentes
+</div>
+
+<h2 class="section-title">
+FAQ
+</h2>
+
+
+<div class="faq">
+
+
+<div class="faq-item">
+
+<button class="faq-button" type="button">
+Où commander PICKS ?
+<span>+</span>
+</button>
+
+<div class="answer">
+Vous pouvez commander PICKS en livraison
+via les plateformes disponibles ou vous rendre
+directement dans votre restaurant.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-button" type="button">
+Quels produits propose PICKS ?
+<span>+</span>
+</button>
+
+<div class="answer">
+PICKS propose notamment des burgers premium,
+du chicken et différentes créations chocolatées
+et desserts.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-button" type="button">
+Comment contacter PICKS ?
+<span>+</span>
+</button>
+
+<div class="answer">
+Vous pouvez utiliser le formulaire de réclamation
+ou les coordonnées affichées dans la section Restaurants.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-button" type="button">
+Comment rejoindre l'équipe ?
+<span>+</span>
+</button>
+
+<div class="answer">
+Utilisez la section Recrutement pour envoyer
+votre candidature directement à PICKS.
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="container footer">
+
+<div>
+
+<h3>PICKS</h3>
+
+<p>
+Burgers Premium & Chocolat.
+L'univers gourmand de PICKS.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>Navigation</h4>
+
+<a href="#menu">Menu</a>
+<a href="#restaurants">Restaurants</a>
+<a href="#reclamation">Réclamation</a>
+<a href="#recrutement">Recrutement</a>
+
+</div>
+
+
+<div>
+
+<h4>Contact</h4>
+
+<a href="tel:+212520782705">
++212 520-782705
+</a>
+
+<a href="mailto:picks@picks.ma">
+picks@picks.ma
+</a>
+
+<a href="https://www.picks.ma/" target="_blank">
+Site officiel
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 PICKS MAROC — Tous droits réservés.
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   MENU MOBILE
+===================================================== */
+
+const toggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+
+toggle.addEventListener("click", () => {
+
+    mobileMenu.classList.toggle("open");
+
+    toggle.textContent =
+        mobileMenu.classList.contains("open")
+        ? "×"
+        : "☰";
+
+});
+
+
+/* Fermer le menu après avoir cliqué */
+
+document.querySelectorAll(".mobile-menu a")
+.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        mobileMenu.classList.remove("open");
+
+        toggle.textContent = "☰";
+
+    });
+
+});
+
+
+/* =====================================================
+   RECHERCHE + FILTRES
+===================================================== */
+
+const products =
+document.querySelectorAll(".product");
+
+const filters =
+document.querySelectorAll(".filter");
+
+const search =
+document.getElementById("search");
+
+let currentFilter = "all";
+
+
+function updateProducts(){
+
+    const text =
+        search.value.toLowerCase().trim();
+
+    products.forEach(product => {
+
+        const category =
+            product.dataset.category;
+
+        const name =
+            product.dataset.name.toLowerCase();
+
+        const categoryOK =
+            currentFilter === "all" ||
+            category === currentFilter;
+
+        const searchOK =
+            name.includes(text);
+
+        product.style.display =
+            categoryOK && searchOK
+            ? ""
+            : "none";
+
+    });
+
+}
+
+
+filters.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filters.forEach(item =>
+            item.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        currentFilter =
+            button.dataset.filter;
+
+        updateProducts();
+
+    });
+
+});
+
+
+search.addEventListener(
+    "input",
+    updateProducts
+);
+
+
+/* =====================================================
+   RÉCLAMATION → APPLICATION MAIL
+===================================================== */
+
+document
+.getElementById("reclamationForm")
+.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const form = new FormData(this);
+
+    const nom =
+        form.get("Nom");
+
+    const telephone =
+        form.get("Téléphone");
+
+    const commande =
+        form.get("Commande") ||
+        "Non renseigné";
+
+    const email =
+        form.get("Email");
+
+    const message =
+        form.get("Message");
+
+
+    const destinataire =
+        "picks@picks.ma";
+
+    const objet =
+        "Nouvelle réclamation — Site PICKS";
+
+
+    const corps =
+`Bonjour,
+
+Je souhaite faire une réclamation auprès de PICKS.
+
+Nom complet : ${nom}
+Téléphone : ${telephone}
+Numéro de commande : ${commande}
+Email : ${email}
+
+Réclamation :
+${message}
+
+Cordialement,
+${nom}`;
+
+
+    const mailto =
+        "mailto:" +
+        destinataire +
+        "?subject=" +
+        encodeURIComponent(objet) +
+        "&body=" +
+        encodeURIComponent(corps);
+
+
+    window.location.href = mailto;
+
+});
+
+
+/* =====================================================
+   RECRUTEMENT → APPLICATION MAIL
+===================================================== */
+
+document
+.getElementById("recrutementForm")
+.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const form = new FormData(this);
+
+    const nom =
+        form.get("Nom");
+
+    const email =
+        form.get("Email");
+
+    const telephone =
+        form.get("Téléphone");
+
+    const poste =
+        form.get("Poste");
+
+    const presentation =
+        form.get("Présentation");
+
+
+    const destinataire =
+        "picks@picks.ma";
+
+    const objet =
+        "Nouvelle candidature — Site PICKS";
+
+
+    const corps =
+`Bonjour,
+
+Je souhaite proposer ma candidature pour rejoindre l'équipe PICKS.
+
+Nom & prénom : ${nom}
+Email : ${email}
+Téléphone : ${telephone}
+Poste recherché : ${poste}
+
+Présentation :
+${presentation}
+
+Cordialement,
+${nom}`;
+
+
+    const mailto =
+        "mailto:" +
+        destinataire +
+        "?subject=" +
+        encodeURIComponent(objet) +
+        "&body=" +
+        encodeURIComponent(corps);
+
+
+    window.location.href = mailto;
+
+});
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+document
+.querySelectorAll(".faq-button")
+.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const answer =
+            button.nextElementSibling;
+
+        const icon =
+            button.querySelector("span");
+
+        answer.classList.toggle("open");
+
+        icon.textContent =
+            answer.classList.contains("open")
+            ? "−"
+            : "+";
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
